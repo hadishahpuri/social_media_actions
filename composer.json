@@ -36,7 +36,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Hadishahpuri\\SocialMediaActions\\SocialMediaActionsServiceProvider"
+                "Hadishahpuri\\SocialMediaActions\\SocialMediaActionsServiceProvider",
+                "Hadishahpuri\\SocialMediaActions\\RouteServiceProvider"
             ]
         }
     }
