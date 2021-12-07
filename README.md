@@ -23,9 +23,7 @@ Run these commands
         by your data
 
 ### Usage ###
-see [full API docs](https://github.com/hadishahpuri/social_media_actions/Routes/README.md)
+see [full API docs](https://github.com/hadishahpuri/social_media_actions/src/Routes/README.md)
 
 ### help and support? ###
 * contact me on :  [hadishahpuri@gmail.com](mailto:hadishahpuri@gmail.com)
-
-* Other community or team contact
