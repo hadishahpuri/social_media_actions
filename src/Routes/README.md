@@ -21,15 +21,12 @@ Run these commands
 
     3- in configs folder open social_media_actions.php and edit the file 
         by your data
-4- see [old docs](https://github.com/morilog/jalali/blob/v2.3.0/README.md)
+
 
 ### Usage ###
+ see [full API docs](https://github.com/hadishahpuri/social_media_actions/Routes/README.md)
 
-* Writing tests
-* Code review
-* Other guidelines
+### help and support? ###
+* contact me on :  [hadishahpuri@gmail.com](mailto:hadishahpuri@gmail.com)
 
-### Who do I talk to? ###
-
-* Repo owner or admin
 * Other community or team contact
