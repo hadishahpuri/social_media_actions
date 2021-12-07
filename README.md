@@ -19,7 +19,10 @@ Run these commands
     
     2- $ php artisan actions:install
 
-3- in configs folder open 
+    3- in configs folder open social_media_actions.php and edit the file 
+        by your data
+4- see [routes]
+
 ### Usage ###
 
 * Writing tests
