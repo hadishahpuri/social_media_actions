@@ -46,7 +46,7 @@ class SocialMediaActionsServiceProvider extends ServiceProvider
             return new InstallCommand();
         });
         $this->commands('actions::install');
-        $this->app->register(RouteServiceProvider::class);
+//        $this->app->register(RouteServiceProvider::class);
     }
 
     /**
