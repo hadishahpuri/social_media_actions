@@ -1,0 +1,43 @@
+{
+    "name": "hadishahpuri/social-media-actions",
+    "description": "like, comment and bookmark actions",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hadi",
+            "email": "hadishahpuri@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src/Controllers",
+            "src/Console",
+            "src/Requests",
+            "src/Middleware",
+            "src/Routes",
+            "src/Models",
+            "src/Database/Migrations"
+        ],
+        "psr-4": {
+            "Hadishahpuri\\SocialMediaActions\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hadishahpuri\\SocialMediaActions\\Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.23"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hadishahpuri\\SocialMediaActions\\SocialMediaActionsServiceProvider"
+            ]
+        }
+    }
+}
