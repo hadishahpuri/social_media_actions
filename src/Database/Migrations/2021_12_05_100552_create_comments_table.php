@@ -24,7 +24,7 @@ class CreateCommentsTable extends Migration
             $table->unsignedBigInteger("approved_by")->nullable();
             $table->foreign("approved_by")->references("id")->on(config('social_media_actions.users_table_name', 'users'))->cascadeOnDelete();
             $table->unsignedBigInteger('reply_id')->nullable();
-            $table->foreign('reply_id')->references('id')->on('comments')->cascadeOnDelete();
+            $table->foreign('reply_id')->references('id')->on('sma_comments')->cascadeOnDelete();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });
