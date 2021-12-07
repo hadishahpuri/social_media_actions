@@ -22,7 +22,7 @@ class CreateCommentsTable extends Migration
             $table->string("commentable_type");
             $table->boolean("approval")->default(config('social_media_actions.comment_approval'));
             $table->unsignedBigInteger("approved_by")->nullable();
-            $table->foreign("user_id")->references("id")->on(config('social_media_actions.users_table_name', 'users'))->cascadeOnDelete();
+            $table->foreign("approved_by")->references("id")->on(config('social_media_actions.users_table_name', 'users'))->cascadeOnDelete();
             $table->unsignedBigInteger('reply_id')->nullable();
             $table->foreign('reply_id')->references('id')->on('comments')->cascadeOnDelete();
             $table->timestamp('created_at')->useCurrent();
