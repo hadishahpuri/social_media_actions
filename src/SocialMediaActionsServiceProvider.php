@@ -18,7 +18,7 @@ class SocialMediaActionsServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->loadMigrationsFrom(__DIR__.'/Database/Migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/api.php');
-        Relation::morphMap(config('social_media_actions.morphs_array', []));
+//        Relation::morphMap(config('social_media_actions.morphs_array', []));
     }
 
     /**
