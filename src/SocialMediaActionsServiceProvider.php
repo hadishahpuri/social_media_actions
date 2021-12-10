@@ -9,16 +9,6 @@ use Illuminate\Support\ServiceProvider;
 class SocialMediaActionsServiceProvider extends ServiceProvider
 {
     /**
-     * @var string $moduleName
-     */
-    protected $moduleName = 'SocialMediaActions';
-
-    /**
-     * @var string $moduleNameLower
-     */
-    protected $moduleNameLower = 'social_media_actions';
-
-    /**
      * Boot the application events.
      *
      * @return void
@@ -28,10 +18,7 @@ class SocialMediaActionsServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->loadMigrationsFrom(__DIR__.'/Database/Migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/api.php');
-        Relation::morphMap([
-            // add your models with their singular lower name exp:
-            //'products' => App\Models\Product::class,
-        ]);
+        Relation::morphMap(config('social_media_actions.morphs_array', []));
     }
 
     /**
@@ -46,9 +33,7 @@ class SocialMediaActionsServiceProvider extends ServiceProvider
             return new InstallCommand();
         });
         $this->commands('actions::install');
-//        $this->app->register(RouteServiceProvider::class);
     }
-
     /**
      * Register config.
      *

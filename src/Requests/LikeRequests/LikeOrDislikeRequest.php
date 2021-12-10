@@ -14,7 +14,7 @@ class LikeOrDislikeRequest extends FormRequest
     public function rules()
     {
         return [
-            'likeable_type' => 'required|in:forums,products,articles',
+            'likeable_type' => 'required|in:' . config('social_media_actions.morphs', ''),
             'likeable_id' => 'required|exists:' . $this->get('likeable_type') . ',id',
         ];
     }

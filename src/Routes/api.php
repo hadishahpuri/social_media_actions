@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware'=>['Auth']],function (){
-    Route::group(['prefix' => 'sma'],function (){
+Route::group(['middleware'=>['Auth', 'api']],function (){
+    Route::group(['prefix' => 'api/sma'],function (){
         Route::post('/comment', [\Hadishahpuri\SocialMediaActions\Controllers\SocialMediaActionController::class,'createComment'])->name('actions.createComment');
         Route::post('/update_comment', [\Hadishahpuri\SocialMediaActions\Controllers\SocialMediaActionController::class,'updateComment'])->name('actions.updateComment');
         Route::post('/delete_comment', [\Hadishahpuri\SocialMediaActions\Controllers\SocialMediaActionController::class,'deleteComment'])->name('actions.deleteComment');
@@ -26,6 +26,6 @@ Route::group(['middleware'=>['Auth']],function (){
         Route::post('/delete_bookmark', [\Hadishahpuri\SocialMediaActions\Controllers\SocialMediaActionController::class, 'deleteBookmark'])->name('actions.delete');
     });
 });
-Route::group(['prefix' => 'sma'],function (){
+Route::group(['prefix' => 'api/sma'],function (){
     Route::post('/comments', [\Hadishahpuri\SocialMediaActions\Controllers\SocialMediaActionController::class,'comments'])->name('actions.comments');
 });

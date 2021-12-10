@@ -14,9 +14,10 @@ class CreateCommentRequest extends FormRequest
     public function rules()
     {
         return [
-            'commentable_type' => 'required|in:forums,products,articles',
+            'commentable_type' => 'required|in:' . config('social_media_actions.morphs', ''),
             'commentable_id' => 'required|exists:' . $this->get('commentable_type') . ',id',
-            'content' => 'required|string|max:3000',
+            'content' => 'required|string|min:' . config('social_media_actions.min_comment_length', '5') .
+                                    '|max:' . config('social_media_actions.max_comment_length', '3000'),
             'reply_id' => 'exists:comments,id'
         ];
     }

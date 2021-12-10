@@ -15,8 +15,9 @@ class UpdateCommentRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => ['required', Rule::exists('comments')->where('id', $this->get('id'))->where('user_id', auth()->id())],
-            'content' => 'string|max:3000',
+            'id' => ['required', Rule::exists('comments')->where('user_id', auth()->id())],
+            'content' => 'string|min:' . config('social_media_actions.min_comment_length', '5') .
+                                    '|max:' . config('social_media_actions.max_comment_length', '3000'),
             'reply_id' => 'exists:comments,id'
         ];
     }

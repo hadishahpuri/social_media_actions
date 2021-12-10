@@ -14,7 +14,7 @@ class CommentsRequest extends FormRequest
     public function rules()
     {
         return [
-            'commentable_type' => 'required|in:forums,products,articles',
+            'commentable_type' => 'required|in:' . config('social_media_actions.morphs', ''),
             'commentable_id' => 'required|exists:' . $this->get('commentable_type') . ',id',
             'paginate' => 'nullable|integer|between:1,50'
         ];

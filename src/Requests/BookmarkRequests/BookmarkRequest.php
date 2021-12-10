@@ -14,7 +14,7 @@ class BookmarkRequest extends FormRequest
     public function rules()
     {
         return [
-            'bookmarkable_type' => 'required|in:forums,products,articles',
+            'bookmarkable_type' => 'required|in:' . config('social_media_actions.morphs', ''),
             'bookmarkable_id' => 'required|exists:' . $this->get('bookmarkable_type') . ',id',
         ];
     }

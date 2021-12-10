@@ -15,7 +15,7 @@ class DeleteCommentRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => ['required', Rule::exists('comments')->where('id', $this->get('id'))->where('user_id', auth()->id())],
+            'id' => ['required', Rule::exists('comments')->where('user_id', auth()->id())],
         ];
     }
 

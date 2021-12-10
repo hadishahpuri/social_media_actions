@@ -15,7 +15,7 @@ class DeleteBookmarkRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => ['required', Rule::exists('bookmarks')->where('user_id', auth()->id())->where('id', $this->get('id'))],
+            'id' => ['required', Rule::exists('bookmarks')->where('user_id', auth()->id())],
         ];
     }
 
